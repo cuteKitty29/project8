@@ -4,14 +4,13 @@ from PyQt5 import uic  # Импортируем uic
 from PyQt5.QtGui import QColor, QPainter
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget
 
-
-class MyWidget(QWidget):
+from ui_file import Ui_Form
+class MyWidget(QWidget, Ui_Form):
     def __init__(self):
         super().__init__()
-        uic.loadUi('UI.ui', self)  # Загружаем дизайн
+        self.setupUi(self)
         self.pushButton.clicked.connect(self.paint)
         self.do_paint = False
-        # Обратите внимание: имя элемента такое же как в QTDesigner
 
     def paintEvent(self, event):
         if self.do_paint:
