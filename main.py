@@ -26,7 +26,7 @@ class MyWidget(QWidget):
         self.update()
 
     def draw_Elipse(self, qp):
-        qp.setBrush(QColor(255, 255, 0))
+        qp.setBrush(QColor(random.randrange(0, 255), random.randrange(0, 255), random.randrange(0, 255)))
         l = random.randrange(0, 212)
         qp.drawEllipse(random.randrange(0, 350), random.randrange(0, 240), l, l)
 
